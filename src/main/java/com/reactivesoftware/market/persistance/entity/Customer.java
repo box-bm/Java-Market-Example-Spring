@@ -16,7 +16,7 @@ public class Customer {
     private String lastName;
 
     @Column(name = "celular")
-    private Number phone;
+    private Long phone;
 
     @Column(name = "direccion")
     private String address;
@@ -51,11 +51,11 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    public Number getPhone() {
+    public Long getPhone() {
         return phone;
     }
 
-    public void setPhone(Number phone) {
+    public void setPhone(Long phone) {
         this.phone = phone;
     }
 
