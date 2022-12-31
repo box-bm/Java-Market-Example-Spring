@@ -31,7 +31,7 @@ public class Sale {
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
     private Customer customer;
 
-    @OneToMany(mappedBy = "producto")
+    @OneToMany(mappedBy = "sale")
     private List<SalesProduct> products;
 
     public Integer getId() {

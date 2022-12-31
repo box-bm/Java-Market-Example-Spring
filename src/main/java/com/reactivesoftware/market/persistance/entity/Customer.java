@@ -24,7 +24,7 @@ public class Customer {
     @Column(name = "correo_electronico")
     private String email;
 
-    @OneToMany(mappedBy = "cliente")
+    @OneToMany(mappedBy = "customer")
     private List<Sale> sales;
 
     public String getId() {

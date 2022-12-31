@@ -33,12 +33,12 @@ public class Product {
     @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
     private Category category;
 
-    public Integer getIdProducto() {
+    public Integer getId() {
         return id;
     }
 
-    public void setIdProducto(Integer idProducto) {
-        this.id = idProducto;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -65,11 +65,11 @@ public class Product {
         this.barCode = barCode;
     }
 
-    public double getSalePrice() {
+    public Double getSalePrice() {
         return salePrice;
     }
 
-    public void setSalePrice(double salePrice) {
+    public void setSalePrice(Double salePrice) {
         this.salePrice = salePrice;
     }
 

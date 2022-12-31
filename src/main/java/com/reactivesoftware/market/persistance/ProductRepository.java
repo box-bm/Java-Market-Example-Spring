@@ -3,6 +3,7 @@ package com.reactivesoftware.market.persistance;
 import com.reactivesoftware.market.persistance.crud.ProductCrudRepository;
 import com.reactivesoftware.market.domain.Product;
 import com.reactivesoftware.market.persistance.mapper.ProductMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -10,7 +11,9 @@ import java.util.Optional;
 
 @Repository
 public class ProductRepository implements com.reactivesoftware.market.domain.repositories.ProductRepository {
+    @Autowired
     private ProductCrudRepository productCrudRepository;
+    @Autowired
     private ProductMapper mapper;
 
     public List<Product> getAll() {
@@ -20,13 +23,13 @@ public class ProductRepository implements com.reactivesoftware.market.domain.rep
 
     @Override
     public Optional<List<Product>> getByCategory(int categoryID) {
-        List<com.reactivesoftware.market.persistance.entity.Product> products = productCrudRepository.findByIdCategoryOrderByNameASC(categoryID);
+        List<com.reactivesoftware.market.persistance.entity.Product> products = productCrudRepository.findByIdCategoryOrderByNameAsc(categoryID);
         return Optional.of(mapper.toProducts(products));
     }
 
     @Override
     public Optional<List<Product>> getInsufficientProducts(int quantity) {
-        Optional<List<com.reactivesoftware.market.persistance.entity.Product>> products = productCrudRepository.findByCantidadStockLessThanAndEstado(quantity, true);
+        Optional<List<com.reactivesoftware.market.persistance.entity.Product>> products = productCrudRepository.findByQuantityStockLessThanAndStatus(quantity, true);
         return products.map(prods -> mapper.toProducts(prods));
     }
 
