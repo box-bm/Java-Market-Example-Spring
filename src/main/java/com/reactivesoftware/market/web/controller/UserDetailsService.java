@@ -11,6 +11,6 @@ import java.util.ArrayList;
 public class UserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return new User("brandon", "{noop}BgcMg2802", new ArrayList<>());
+        return new User("brandon", "{noop}platzi", new ArrayList<>());
     }
 }
