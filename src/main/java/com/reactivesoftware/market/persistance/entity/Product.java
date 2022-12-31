@@ -1,7 +1,7 @@
 package com.reactivesoftware.market.persistance.entity;
 
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "productos")
