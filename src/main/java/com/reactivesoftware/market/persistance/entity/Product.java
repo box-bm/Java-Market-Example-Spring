@@ -9,7 +9,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_producto")
-    private Integer idProducto;
+    private Integer id;
 
     @Column(name = "nombre")
     private String name;
@@ -21,7 +21,7 @@ public class Product {
     private String barCode;
 
     @Column(name = "precio_venta")
-    private double salePrice;
+    private Double salePrice;
 
     @Column(name = "cantidad_stock")
     private Integer quantityStock;
@@ -34,11 +34,11 @@ public class Product {
     private Category category;
 
     public Integer getIdProducto() {
-        return idProducto;
+        return id;
     }
 
     public void setIdProducto(Integer idProducto) {
-        this.idProducto = idProducto;
+        this.id = idProducto;
     }
 
     public String getName() {
